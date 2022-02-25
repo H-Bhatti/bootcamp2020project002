@@ -40,10 +40,11 @@ jobs:
   # install surge
           
       - name: built react app
-        run: yarn build
+        #run: yarn build CI= npm run build
+        run: CI= npm run build
         
       - name: installing surge
-        run: npm install --global surge     
+        run: npm install surge --global     
         
       - name: deploy to surge
         run: surge ./ build bootcamp2020project002_h_r_b.surge.sh --token ${{ secrets.SURGE_TOKEN }}
