@@ -49,7 +49,7 @@ jobs:
         run: npm install surge --global     
         
       - name: deploy to surge
-        run: surge ./ build bootcamp2020project002_hrb_hrb_hrb_hrb.surge.sh --token ${{ secrets.SURGE_TOKENA }}
+        run: surge ./ build bootcamp2020project002_hrb_hrb_hrb.surge.sh --token ${{ secrets.SURGE_TOKENB }}
 
       
 
