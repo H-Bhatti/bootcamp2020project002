@@ -18,7 +18,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GIT HUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+ #     - uses: actions/checkout@v2
       
       
       - name: install node.js
@@ -26,26 +26,32 @@ jobs:
         with:
           node-version: 16
           
-          
-          
-
-  #installing yarn
-      - uses: borales/actions-yarn@v2.3.0         # check video 
+#///
+      - name: Checking out code
+        uses: actions/checkout@v2
+      
+      - name: Installing Yarn
+        uses: borales/actions-yarn@v2.3.0
         with:
           cmd: install # will run `yarn install` command
           
-  # install surge
-  
-
-          
       - name: Building react App
-        run: sudo yarn build
+        uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: build 
+      
         
-      - name: installing surge
-        run: npm install --global surge    
+      - name: Install Surge
+        run: npm install --global surge
+          
+
+
+
+#///
+   
         
       - name: deploy to surge
-        run: surge ./ build bootcamp2020project002_hrbhrb_hrb.surge.sh --token ${{ secrets.SURGE_TOKENB }}
+        run: surge ./ build bootcamp2020project002_hrbhrbhrb.surge.sh --token ${{ secrets.SURGE_TOKEN }}
 
       
 
