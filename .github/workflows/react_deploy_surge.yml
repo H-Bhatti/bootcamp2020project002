@@ -24,11 +24,8 @@ jobs:
       - name: install node.js
         uses: actions/setup-node@v2-beta
         with:
-          node-version: 14
-#install js dependencies
-      - name: Install JS dependencies #test
-        run: npm install
-           
+          node-version: 16
+          
           
           
 
@@ -42,15 +39,13 @@ jobs:
 
           
       - name: Building react App
-        uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: build 
+        run: sudo yarn build
         
       - name: installing surge
         run: npm install --global surge    
         
       - name: deploy to surge
-        run: surge ./ build bootcamp2020project002_hrb_hrbhrb.surge.sh --token ${{ secrets.SURGE_TOKENB }}
+        run: surge ./ build bootcamp2020project002_hrbhrb_hrb.surge.sh --token ${{ secrets.SURGE_TOKENB }}
 
       
 
