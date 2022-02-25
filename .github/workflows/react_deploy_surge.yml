@@ -25,7 +25,10 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
           node-version: 14
-          
+
+      - name: Install JS dependencies #test
+        run: npm install
+           
           
           
    #   - name: Prepare for Yarn Installation
@@ -38,6 +41,8 @@ jobs:
           cmd: install # will run `yarn install` command
           
   # install surge
+  
+
           
       - name: built react app
         #run: yarn build CI= npm run build
