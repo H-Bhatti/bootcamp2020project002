@@ -33,7 +33,7 @@ jobs:
       run: npm install surge --global
         
     - name: deploy to surge
-      run: surge ./ build bootcamp2020_hammadururhmanbhattikasecondprojectjodeploynihorha.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+      run: surge ./ build bootcamp2020_hammadururhmanbhattikasecondprojectjodeploynihorha_vsad.surge.sh --token ${{ secrets.SURGE_TOKEN }}
         
     
 
