@@ -26,15 +26,25 @@ jobs:
       - name: installing node module
         uses: actions/setup-node@v2-beta
         with:
-          node-version: 12
+          node-version: 16
 
-      # Runs a set of commands using the runners shell
-      - name: installing surge
-        run: npm install --global surge
+  #installing yarn
+      - uses: borales/actions-yarn@v2.3.0         # check video 
+        with:
+          cmd: install # will run `yarn install` command
+          
+  # install surge
+  
+
+          
+      - name: Building react App
+        run: yarn build
         
+      - name: installing surge
+        run: npm install --global surge 
         
       - name: deploy to surge
-        run: surge ./ build bootcamp2020_project002-hrbhrb.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+        run: surge ./ build bootcamp2020_hammadururhmanbhattikasecondprojectjodeploynihorha.surge.sh --token ${{ secrets.SURGE_TOKEN }}
         
     
 
